@@ -10,6 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const dotPattern = `data:image/svg+xml,${encodeURIComponent(
+  `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z" fill="rgba(255,255,255,0.07)"/>
+  </svg>`
+)}`;
+
 const Index = () => {
   const services = [
     {
@@ -77,27 +83,21 @@ const Index = () => {
     "Quality Guarantee"
   ];
 
-  const dotPattern = `data:image/svg+xml,${encodeURIComponent(
-    `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z" fill="rgba(255,255,255,0.07)"/>
-    </svg>`
-  )}`;
-
   return (
-    <div className="min-h-screen bg-white">
-      <section className="relative py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white overflow-hidden">
+    <div className="min-h-screen bg-[#F6F6F7]">
+      <section className="relative py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0EA5E9] via-[#1EAEDB] to-[#0FA0CE] text-white overflow-hidden">
         <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center animate-fade-in space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text">
               NexWavy Technical Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#D3E4FD] mb-8 max-w-3xl mx-auto leading-relaxed">
               Your One-Stop Platform for Professional Technical Services. 
               Connect with Verified Experts, Access Real-Time Material Prices, and Manage Assets Efficiently.
             </p>
             <div className="flex gap-6 justify-center">
-              <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300 text-lg px-8" asChild>
+              <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300 text-lg px-8 bg-white text-[#0EA5E9] hover:bg-[#D3E4FD]" asChild>
                 <Link to="/services">Explore Services <ArrowRight className="ml-2" /></Link>
               </Button>
               <Button size="lg" variant="outline" className="hover:scale-105 transition-transform duration-300 text-lg px-8 text-white border-white hover:bg-white/10" asChild>
@@ -108,11 +108,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="bg-blue-50 py-4 border-y border-blue-100">
+      <section className="bg-[#F1F0FB] py-4 border-y border-[#D3E4FD]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-8 items-center">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2 text-blue-700">
+              <div key={index} className="flex items-center gap-2 text-[#0EA5E9]">
                 <CheckCircle2 className="w-5 h-5" />
                 <span className="font-medium">{benefit}</span>
               </div>
@@ -121,25 +121,25 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-[#F1F1F1] to-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your technical service needs</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0EA5E9]">Our Services</h2>
+            <p className="text-[#403E43] max-w-2xl mx-auto">Comprehensive solutions tailored to meet your technical service needs</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:scale-105 transition-all duration-300 border-blue-100 hover:border-blue-300 hover:shadow-xl bg-white/50 backdrop-blur-sm">
+              <Card key={index} className="group hover:scale-105 transition-all duration-300 border-[#D3E4FD] hover:border-[#0EA5E9] hover:shadow-xl bg-white/50 backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                      <service.icon className="w-8 h-8 text-blue-600" />
+                    <div className="p-3 rounded-lg bg-[#F1F0FB] group-hover:bg-[#D3E4FD] transition-colors">
+                      <service.icon className="w-8 h-8 text-[#0EA5E9]" />
                     </div>
-                    <CardTitle className="text-xl text-blue-700">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-[#0EA5E9]">{service.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <p className="text-[#8E9196] leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -202,13 +202,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white relative overflow-hidden">
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0EA5E9] via-[#1EAEDB] to-[#0FA0CE] text-white relative overflow-hidden">
         <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto text-center relative">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Technical Services?</h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">Join our platform and experience the future of technical service delivery.</p>
+          <p className="text-xl mb-8 text-[#D3E4FD] max-w-2xl mx-auto">Join our platform and experience the future of technical service delivery.</p>
           <div className="flex gap-6 justify-center">
-            <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300 text-lg px-8" asChild>
+            <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300 text-lg px-8 bg-white text-[#0EA5E9] hover:bg-[#D3E4FD]" asChild>
               <Link to="/register">Get Started Now <ArrowRight className="ml-2" /></Link>
             </Button>
             <Button size="lg" variant="outline" className="hover:scale-105 transition-transform duration-300 text-lg px-8 text-white border-white hover:bg-white/10" asChild>
