@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wrench, Database, BarChart, Shield, Star, Calendar, ArrowRight, CheckCircle2, Building2 } from "lucide-react";
@@ -78,11 +77,16 @@ const Index = () => {
     "Quality Guarantee"
   ];
 
+  const dotPattern = `data:image/svg+xml,${encodeURIComponent(
+    `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z" fill="rgba(255,255,255,0.07)"/>
+    </svg>`
+  )}`;
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section className="relative py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z\" fill=\"rgba(255,255,255,0.07)\"%3E%3C/path%3E%3C/svg%3E')] opacity-10"/>
+        <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center animate-fade-in space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text">
@@ -104,7 +108,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Strip */}
       <section className="bg-blue-50 py-4 border-y border-blue-100">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-8 items-center">
@@ -118,7 +121,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -145,7 +147,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -169,7 +170,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -185,7 +185,7 @@ const Index = () => {
                       <div className="mb-6">
                         <Building2 className="w-12 h-12 mx-auto text-blue-600 opacity-50" />
                       </div>
-                      <p className="text-lg text-gray-700 italic leading-relaxed">"{testimonial.text}"</p>
+                      <p className="text-lg text-gray-700 italic leading-relaxed">&quot;{testimonial.text}&quot;</p>
                       <div>
                         <p className="font-semibold text-blue-600 text-lg">{testimonial.author}</p>
                         <p className="text-gray-500">{testimonial.role}</p>
@@ -202,9 +202,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z\" fill=\"rgba(255,255,255,0.07)\"%3E%3C/path%3E%3C/svg%3E')] opacity-10"/>
+        <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto text-center relative">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Technical Services?</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">Join our platform and experience the future of technical service delivery.</p>
