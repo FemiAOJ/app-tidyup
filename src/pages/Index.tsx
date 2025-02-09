@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Book, Users, Award, Code, Quote } from "lucide-react";
+import { Wrench, Database, BarChart, Shield, Star, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
@@ -12,44 +12,57 @@ import {
 } from "@/components/ui/carousel";
 
 const Index = () => {
-  const courses = [
+  const services = [
     {
-      title: "Product Management",
-      icon: Book,
-      description: "Learn to build and manage successful products from ideation to launch."
+      title: "Technical Services",
+      icon: Wrench,
+      description: "Connect with verified technicians, plumbers, and mechanics in your area."
     },
     {
-      title: "Project Management",
-      icon: Users,
-      description: "Master the skills needed to lead teams and deliver successful projects."
+      title: "Material Database",
+      icon: Database,
+      description: "Access up-to-date prices and information for facility materials."
     },
     {
-      title: "Scrum",
-      icon: Award,
-      description: "Become proficient in Agile methodologies and Scrum frameworks."
+      title: "Asset Management",
+      icon: BarChart,
+      description: "Comprehensive asset inventory management for MSME businesses."
+    }
+  ];
+
+  const features = [
+    {
+      title: "Verified Professionals",
+      icon: Shield,
+      description: "All service providers are thoroughly vetted and verified."
     },
     {
-      title: "Software Development",
-      icon: Code,
-      description: "Learn modern software development practices and coding principles."
+      title: "User Reviews",
+      icon: Star,
+      description: "Make informed decisions based on genuine user experiences."
+    },
+    {
+      title: "Easy Booking",
+      icon: Calendar,
+      description: "Book services quickly and efficiently through our platform."
     }
   ];
 
   const testimonials = [
     {
-      text: "The product management course completely transformed my career path.",
-      author: "Sarah Johnson",
-      role: "Product Manager at Tech Corp"
+      text: "Found a reliable technician within minutes. Excellent service!",
+      author: "James Wilson",
+      role: "Business Owner"
     },
     {
-      text: "NexWavy's project management training was exactly what I needed to advance in my role.",
-      author: "Michael Chen",
-      role: "Senior Project Manager"
+      text: "The material database saves us time and money on procurement.",
+      author: "Sarah Chen",
+      role: "Facility Manager"
     },
     {
-      text: "The Scrum certification program was comprehensive and practical.",
-      author: "Emily Rodriguez",
-      role: "Agile Coach"
+      text: "Asset management feature has streamlined our inventory tracking.",
+      author: "Michael Rodriguez",
+      role: "Operations Director"
     }
   ];
 
@@ -60,38 +73,38 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              NexWavy Solutions Ltd
+              NexWavy Technical Services
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Empowering professionals with expert training in Product Management, Project Management, Scrum, and Software Development.
+              Connecting you with trusted technical professionals. Find verified technicians, access material prices, and manage assets efficiently.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" variant="secondary" className="hover-scale" asChild>
-                <Link to="/courses">Explore Courses</Link>
+                <Link to="/services">Find Services</Link>
               </Button>
               <Button size="lg" variant="outline" className="hover-scale text-white hover:text-blue-600" asChild>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/register">Join as Provider</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Courses Section */}
+      {/* Services Section */}
       <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">Our Training Programs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {courses.map((course, index) => (
+          <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
               <Card key={index} className="hover-scale border-blue-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <course.icon className="w-8 h-8 text-blue-600" />
-                    <CardTitle className="text-xl text-blue-700">{course.title}</CardTitle>
+                    <service.icon className="w-8 h-8 text-blue-600" />
+                    <CardTitle className="text-xl text-blue-700">{service.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{course.description}</p>
+                  <p className="text-gray-600">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -99,17 +112,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Features Section */}
       <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">Why Choose Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="text-center p-6 hover-scale">
+                <feature.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-blue-700">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">What Our Students Say</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">What Our Users Say</h2>
           <Carousel className="mx-auto">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <Card className="border-0 shadow-none">
                     <CardContent className="text-center p-6">
-                      <Quote className="w-8 h-8 text-blue-400 mx-auto mb-4" />
                       <p className="text-lg text-gray-700 mb-4">{testimonial.text}</p>
                       <p className="font-semibold text-blue-600">{testimonial.author}</p>
                       <p className="text-sm text-gray-500">{testimonial.role}</p>
@@ -124,35 +152,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12 text-blue-600">Why Choose NexWavy?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 hover-scale">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Expert Instructors</h3>
-              <p className="text-gray-600">Learn from industry professionals with years of practical experience.</p>
-            </div>
-            <div className="p-6 hover-scale">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Practical Learning</h3>
-              <p className="text-gray-600">Hands-on projects and real-world applications of concepts.</p>
-            </div>
-            <div className="p-6 hover-scale">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Career Growth</h3>
-              <p className="text-gray-600">Acquire skills that are in high demand in today's job market.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 px-4 md:px-6 lg:px-8 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto text-center animate-fade-in">
-          <h2 className="text-3xl font-bold mb-6">Ready to Advance Your Career?</h2>
-          <p className="text-xl mb-8 text-blue-100">Join our training programs and take the next step in your professional journey.</p>
-          <Button size="lg" variant="secondary" className="hover-scale" asChild>
-            <Link to="/register">Get Started Today</Link>
-          </Button>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 text-blue-100">Join our platform and experience hassle-free technical services.</p>
+          <div className="flex gap-4 justify-center">
+            <Button size="lg" variant="secondary" className="hover-scale" asChild>
+              <Link to="/register">Register Now</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="hover-scale text-white hover:text-blue-600" asChild>
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
