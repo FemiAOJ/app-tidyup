@@ -89,13 +89,17 @@ const Index = () => {
         <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center animate-fade-in space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text">
-              NexWavy Technical Solutions
-            </h1>
-            <p className="text-xl md:text-2xl text-[#D3E4FD] mb-8 max-w-3xl mx-auto leading-relaxed">
-              Your One-Stop Platform for Professional Technical Services. 
-              Connect with Verified Experts, Access Real-Time Material Prices, and Manage Assets Efficiently.
-            </p>
+            <div className="flex flex-col items-center justify-center space-y-6">
+              <img 
+                src="/lovable-uploads/1fa2e533-d6e3-4452-852f-9a42e31cb19f.png" 
+                alt="Nexwavy Solutions Logo" 
+                className="h-24 md:h-32 mb-8 animate-fade-in"
+              />
+              <p className="text-xl md:text-2xl text-[#D3E4FD] mb-8 max-w-3xl mx-auto leading-relaxed">
+                Your One-Stop Platform for Professional Technical Services. 
+                Connect with Verified Experts, Access Real-Time Material Prices, and Manage Assets Efficiently.
+              </p>
+            </div>
             <div className="flex gap-6 justify-center">
               <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300 text-lg px-8 bg-white text-[#0EA5E9] hover:bg-[#D3E4FD]" asChild>
                 <Link to="/services">Explore Services <ArrowRight className="ml-2" /></Link>
@@ -205,6 +209,13 @@ const Index = () => {
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0EA5E9] via-[#1EAEDB] to-[#0FA0CE] text-white relative overflow-hidden">
         <div className={`absolute inset-0 opacity-10`} style={{ backgroundImage: `url("${dotPattern}")` }} />
         <div className="max-w-7xl mx-auto text-center relative">
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/1fa2e533-d6e3-4452-852f-9a42e31cb19f.png" 
+              alt="Nexwavy Solutions Logo" 
+              className="h-16 mx-auto mb-6"
+            />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Technical Services?</h2>
           <p className="text-xl mb-8 text-[#D3E4FD] max-w-2xl mx-auto">Join our platform and experience the future of technical service delivery.</p>
           <div className="flex gap-6 justify-center">
